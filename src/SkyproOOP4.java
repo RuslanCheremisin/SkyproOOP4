@@ -23,12 +23,12 @@ public class SkyproOOP4 {
         hino300.getMaxSpeed();
 
 
-        Driver<Car> vasya = new Driver<>("Vasya",'B', 4);
-        Driver<Truck> kolya = new Driver<>("Kolya",'C', 4);
-        Driver<Bus> fedya = new Driver<>("Fedya",'D', 4);
-        vasya.showWhatsHappening(paganiZonda);
-        kolya.showWhatsHappening(kamazMaster);
-        fedya.showWhatsHappening(laz699);
+        Driver<Car> vasya = new Driver<>("Vasya",paganiZonda, 4);
+        Driver<Truck> kolya = new Driver<>("Kolya",kamazMaster, 4);
+        Driver<Bus> fedya = new Driver<>("Fedya",laz699, 4);
+        vasya.showWhatsHappening();
+        kolya.showWhatsHappening();
+        fedya.showWhatsHappening();
 
     }
 
