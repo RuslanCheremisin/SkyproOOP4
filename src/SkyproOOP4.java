@@ -18,17 +18,17 @@ public class SkyproOOP4 {
         Truck freightLinerCascadia = new Truck("FreightLiner", "Cascadia", 12.8);
         Truck volvoFH = new Truck("Volvo", "FH", 12.1);
 
-        toyotaMarkII.getBestLapTime();
-        ikarus250.doPitStop();
-        hino300.getMaxSpeed();
+//        toyotaMarkII.getBestLapTime();
+//        ikarus250.doPitStop();
+//        hino300.getMaxSpeed();
 
-
-        Driver<Car> vasya = new Driver<>("Vasya",paganiZonda, 4);
-        Driver<Truck> kolya = new Driver<>("Kolya",kamazMaster, 4);
-        Driver<Bus> fedya = new Driver<>("Fedya",laz699, 4);
-        vasya.showWhatsHappening();
-        kolya.showWhatsHappening();
-        fedya.showWhatsHappening();
+//
+        DriverB kolya = new DriverB("Kolya",'C', 4);
+        DriverC vasya = new DriverC("Vasya",'B', 4);
+        DriverD fedya = new DriverD("Fedya",'D', 4);
+        kolya.showWhatsHappening(paganiZonda);
+        vasya.showWhatsHappening(kamazMaster);
+        fedya.showWhatsHappening(laz699);
 
     }
 
