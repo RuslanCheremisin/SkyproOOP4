@@ -42,6 +42,8 @@ public class SkyproOOP4 {
         kamazMaster.getLiftingCapacityValues();
         volvoFH.getLiftingCapacityValues();
 
+        //в разборе использован абстрактный метод, я сделал уникальные методы под разные типы авто, если надо - переделаю
+
 
 
     }
