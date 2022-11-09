@@ -3,7 +3,10 @@ public class ValidateUtil {
         if (value!=null && !value.isEmpty() && !value.isBlank()) {
             return value;
         }else{
-            return "Incorrect entry";
+//            throw new NoDriverLicenseException("Incorrect entry");
+            return "No data";
+
+
         }
     }
 

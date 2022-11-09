@@ -20,9 +20,14 @@ public class Car extends Transport{
        private final BodyType bodyType;
 
 
-    public Car(String brand, String model, double engineDisplacement, BodyType bodyType){
+
+
+
+
+    public Car(String brand, String model, double engineDisplacement, BodyType bodyType) throws NoDriverLicenseException {
         super(brand, model, engineDisplacement);
         this.bodyType = bodyType;
+
     }
 
     @Override
@@ -34,6 +39,11 @@ public class Car extends Transport{
     public void stopMovement(){
         System.out.println("Car "+getBrand()+" "+getModel()+" stops" +
                 "\n---------------------------------------------------");
+    }
+
+    @Override
+    public boolean service() {
+        return Math.random() > 0.7;
     }
 
     @Override
@@ -66,4 +76,6 @@ public class Car extends Transport{
         }
 
     }
+
+
 }

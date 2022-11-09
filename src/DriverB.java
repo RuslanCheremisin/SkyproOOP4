@@ -1,8 +1,8 @@
 public class DriverB extends Driver<Car>{
-    public DriverB(String name, char driverLicense, int experienceYears) {
+    public DriverB(String name, String driverLicense, int experienceYears) throws NoDriverLicenseException{
         super(name, driverLicense, experienceYears);
-        if (driverLicense!='B'){
-            setDriverLicense('B');
+        if (driverLicense== null || driverLicense!="B"){
+            throw new NoDriverLicenseException("No driver license!");
         }
     }
 }

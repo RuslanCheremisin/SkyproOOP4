@@ -25,7 +25,7 @@ public class Bus extends Transport{
 
     }
     PassengerCapacity passengerCapacity;
-    public Bus(String brand, String model, double engineDisplacement, PassengerCapacity passengerCapacity){
+    public Bus(String brand, String model, double engineDisplacement, PassengerCapacity passengerCapacity) throws NoDriverLicenseException {
         super(brand, model, engineDisplacement);
         this.passengerCapacity = passengerCapacity;
     }
@@ -51,6 +51,16 @@ public class Bus extends Transport{
                 "\n---------------------------------------------------");
 
     }
+
+    @Override
+    public boolean service() {
+
+
+        System.out.println("Bus "+getBrand()+" "+getModel()+" doesn't need service" +
+                "\n---------------------------------------------------");
+        return true;
+    }
+
     @Override
     public void doPitStop() {
         System.out.println("Bus "+getBrand()+" "+getModel()+" goes to pit lane" +

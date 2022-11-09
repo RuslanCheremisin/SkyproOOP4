@@ -22,8 +22,9 @@ public class Truck extends Transport{
         }
     }
 
-    public Truck(String brand, String model, double engineDisplacement, LiftingCapacity liftingCapacity){
+    public Truck(String brand, String model, double engineDisplacement, LiftingCapacity liftingCapacity)throws NoDriverLicenseException{
         super(brand, model, engineDisplacement);
+
         this.liftingCapacity = liftingCapacity;
     }
 
@@ -41,6 +42,12 @@ public class Truck extends Transport{
 
 
     }
+
+    @Override
+    public boolean service() {
+        return Math.random() > 0.75;
+    }
+
     @Override
     public void doPitStop() {
         System.out.println("Truck "+getBrand()+" "+getModel()+" goes to pit lane");

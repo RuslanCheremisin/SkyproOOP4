@@ -1,11 +1,19 @@
-public class Driver <D extends Transport & Competing>{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Driver<D extends Transport & Competing> {
     private final String fullName;
-    private char driverLicense;
+    private String driverLicense;
     private int experienceYears;
 
-    public Driver(String name, char driverLicense, int experienceYears){
-        this.fullName = ValidateUtil.validateString(name);
-        this.driverLicense = ValidateUtil.validateChar(driverLicense);
+
+
+
+
+
+    public Driver(String fullName, String driverLicense, int experienceYears) throws NoDriverLicenseException {
+        this.fullName = ValidateUtil.validateString(fullName);
+        this.driverLicense = ValidateUtil.validateString(driverLicense);
         this.experienceYears = ValidateUtil.validateInt(experienceYears);
     }
 
@@ -13,18 +21,26 @@ public class Driver <D extends Transport & Competing>{
         return fullName;
     }
 
-    public char getDriverLicense() {
+    public String getDriverLicense() {
         return driverLicense;
     }
-    public void setDriverLicense(char driverLicense){
-        this.driverLicense = ValidateUtil.validateChar(driverLicense);
+
+    public void setDriverLicense(String driverLicense) throws NoDriverLicenseException {
+        this.driverLicense = ValidateUtil.validateString(driverLicense);
     }
 
     public int getExperienceYears() {
         return experienceYears;
     }
-    public void showWhatsHappening(D d){
-        System.out.println("Driver "+getFullName()+" on "+d.getBrand()+" "+d.getModel()+" is participating in race\n" +
+
+    public Transport getDriversTransportInfo(D d) {
+        return d;
+    }
+
+    public void showWhatsHappening(D d) {
+        System.out.println("Driver " + getFullName() + " on " + d.getBrand() + " " + d.getModel() + " is participating in race\n" +
                 "---------------------------------------------------");
     }
+
+
 }
