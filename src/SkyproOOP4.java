@@ -1,5 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SkyproOOP4 {
     public static void main(String[] args) throws NoDriverLicenseException, VehicleIsAlreadyInTheListException {
@@ -46,16 +46,20 @@ public class SkyproOOP4 {
 
         /////////////////// задание по коллекциям 1 /////////////
 
-        List<Transport> carsList = new ArrayList<>();
-        List<Sponsor> sponsorsList = new ArrayList<>();
-        List<Driver> driversList = new ArrayList<>();
-        List<Mechanic> mechanicsList = new ArrayList<>();
+        Set<Transport> carsList = new HashSet<>();
+        Set<Sponsor> sponsorsList = new HashSet<>();
+        Set<Driver> driversList = new HashSet<>();
+        Set<Mechanic> mechanicsList = new HashSet<>();
 
         driversList.add(fedya);
         driversList.add(kolya);
         driversList.add(vasya);
 
+        driversList.add(vasya); //!!!!!! duplication
+
         carsList.add(paganiZonda);
+
+        carsList.add(paganiZonda); //!!!!!!!! duplication
         carsList.add(toyotaMarkII);
         carsList.add(VAZ2102);
         carsList.add(shelbyCobra);
@@ -83,6 +87,8 @@ public class SkyproOOP4 {
 
 
         sponsorsList.add(rosneft);
+
+        sponsorsList.add(rosneft); //!!!!!!!! duplication
         sponsorsList.add(redBull);
 
         Mechanic<Truck> stepanych = new Mechanic<>("Semyon Stepanovych", "Garazh Stepanycha");
@@ -92,13 +98,19 @@ public class SkyproOOP4 {
 
         mechanicsList.add(stepanych);
         mechanicsList.add(dougDeMuro);
+
+        mechanicsList.add(dougDeMuro); //!!!!!!!! duplication
         mechanicsList.add(jamesHammond);
 
 
         laz699.getContractedMechanics().add(jamesHammond);
         hino300.getContractedMechanics().add(stepanych);
 
+        hino300.getContractedMechanics().add(stepanych); //!!!!!!!! duplication
+
         stepanych.getTransportInService().add(kamazMaster);
+
+        stepanych.getTransportInService().add(kamazMaster); //!!!!!!!! duplication
         stepanych.getTransportInService().add(freightLinerCascadia);
         stepanych.doService(kamazMaster);
         stepanych.doRepair(kamazMaster);
@@ -110,6 +122,8 @@ public class SkyproOOP4 {
         paganiZonda.setDriver(fedya);
 
         rosneft.addVehicle(paganiZonda);
+//        rosneft.addVehicle(paganiZonda);//!!!!!!!! duplication with Exception throw
+
         redBull.addVehicle(paganiZonda);
         paganiZonda.getContractedSponsors().add(rosneft);
         paganiZonda.getContractedSponsors().add(redBull);
@@ -122,6 +136,8 @@ public class SkyproOOP4 {
 
         kamazMaster.setDriver(vasya);
         kamazMaster.getContractedSponsors().add(rosneft);
+
+        kamazMaster.getContractedSponsors().add(rosneft);//!!!!!!!! duplication
         rosneft.addVehicle(kamazMaster);
         rosneft.provideSupportToVehicle(kamazMaster, 258000);
         kamazMaster.getContractedMechanics().add(stepanych);
