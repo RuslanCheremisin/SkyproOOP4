@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public abstract class Transport implements Competing {
@@ -73,6 +74,23 @@ public abstract class Transport implements Competing {
 
     public void setDriver(Driver driver) {
         this.driver = driver;
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(brand, model, engineDisplacement);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o==null || this.getClass()!=o.getClass()){
+            return false;
+        }
+        Transport transport = (Transport) o;
+        return Objects.equals(brand, ((Transport) o).brand) && Objects.equals(model, ((Transport) o).model) && engineDisplacement==((Transport) o).engineDisplacement;
     }
 
 

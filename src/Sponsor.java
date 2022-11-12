@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Sponsor<S extends Transport & List> {
     private String name;
@@ -61,5 +58,22 @@ public class Sponsor<S extends Transport & List> {
 
     public void setSupportAmount(int supportAmount) {
         this.supportAmount = ValidateUtil.validateInt(supportAmount);
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(name, supportAmount);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o==null || this.getClass()!=o.getClass()){
+            return false;
+        }
+        Sponsor sponsor = (Sponsor) o;
+        return Objects.equals(sponsor.name, name)  && sponsor.supportAmount==supportAmount;
     }
 }

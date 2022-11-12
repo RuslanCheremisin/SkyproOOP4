@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Mechanic <M extends Transport>{
@@ -71,5 +72,21 @@ public class Mechanic <M extends Transport>{
 
     public String getFullname() {
         return fullName;
+    }
+    @Override
+    public int hashCode(){
+        return Objects.hash(fullName, companyName);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o==null || this.getClass()!=o.getClass()){
+            return false;
+        }
+        Mechanic mechanic = (Mechanic) o;
+        return Objects.equals(mechanic.fullName, fullName) && Objects.equals(mechanic.companyName, companyName) ;
     }
 }
