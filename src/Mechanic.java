@@ -1,13 +1,12 @@
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Mechanic <M extends Transport>{
 
     private String fullName;
     private String companyName;
 
-    private List<Transport> transportInService = new ArrayList<>();
+    private Set<Transport> transportInService = new HashSet<>();
 
 
 
@@ -65,7 +64,7 @@ public class Mechanic <M extends Transport>{
         this.companyName = ValidateUtil.validateString(companyName);
     }
 
-    public List<Transport> getTransportInService() {
+    public Set<Transport> getTransportInService() {
         return transportInService;
     }
 

@@ -131,7 +131,7 @@ public class SkyproOOP4 {
         /////////////////// задание по коллекциям 2 /////////////
 
         ServiceStation serviceStation = new ServiceStation();
-        serviceStation.addVehicle(kamazMaster);
+        serviceStation.addTransport(kamazMaster);
         serviceStation.serviceVehicles();
     }
 

@@ -1,11 +1,13 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Sponsor<S extends Transport & List> {
     private String name;
     private int supportAmount;
 
-    private List<Transport> sponsoredVehicles = new ArrayList<>();
+    private Set<Transport> sponsoredVehicles = new HashSet<>();
 
     public Sponsor(String name) {
         setName(name);
@@ -37,8 +39,8 @@ public class Sponsor<S extends Transport & List> {
 
     public void getSponsoredVehiclesList() {
         System.out.println("Sponsored drivers list of "+getName()+":");
-        for (int i = 0; i < sponsoredVehicles.size(); i++) {
-            System.out.println(sponsoredVehicles.get(i).getBrand()+" "+sponsoredVehicles.get(i).getModel());
+        for (Transport transport: sponsoredVehicles) {
+            System.out.println(transport.getBrand()+" "+transport.getModel());
         }
         System.out.println("----------------------------------------");
     }

@@ -1,6 +1,5 @@
-import javax.print.attribute.IntegerSyntax;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class Transport implements Competing {
     private final String brand;
@@ -8,8 +7,8 @@ public abstract class Transport implements Competing {
     private final double engineDisplacement;
     private boolean carMustBeFixed;
 
-    private List<Sponsor> contractedSponsors = new ArrayList();
-    private List<Mechanic> contractedMechanics = new ArrayList();
+    private Set<Sponsor> contractedSponsors = new HashSet<>();
+    private Set<Mechanic> contractedMechanics = new HashSet<>();
 
     private Driver driver;
 
@@ -60,11 +59,11 @@ public abstract class Transport implements Competing {
         this.carMustBeFixed = false;
     }
 
-    public List<Sponsor> getContractedSponsors() {
+    public Set<Sponsor> getContractedSponsors() {
         return contractedSponsors;
     }
 
-    public List<Mechanic> getContractedMechanics() {
+    public Set<Mechanic> getContractedMechanics() {
         return contractedMechanics;
     }
 

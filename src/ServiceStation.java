@@ -5,11 +5,11 @@ public class ServiceStation<T extends Transport> {
 
     private Queue<T> serviceQueue = new ArrayDeque<>();
 
-    public void addVehicle(T vehicle) {
-        if (vehicle instanceof Bus){
+    public void addTransport(T transport) {
+        if (transport instanceof Bus){
             System.out.println("Buses don't need service");
         }else {
-            serviceQueue.add(vehicle);
+            serviceQueue.add(transport);
         }
     }
     public void serviceVehicles(){

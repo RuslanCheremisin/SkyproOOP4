@@ -3,12 +3,12 @@ public class DetailedInfo {
         System.out.println(transport.getBrand() + " " + transport.getModel());
         System.out.println("Driver: " + transport.getDriver().getFullName());
         System.out.println("List of sponsors:");
-        for (int i = 0; i < transport.getContractedSponsors().size(); i++) {
-            System.out.println(transport.getContractedSponsors().get(i).getName()+" with support amount of "+transport.getContractedSponsors().get(i).getSupportAmount());
+        for (Sponsor sponsor: transport.getContractedSponsors()) {
+            System.out.println(sponsor.getName()+" with support amount of "+sponsor.getSupportAmount());
         }
         System.out.println("List of mechanics:");
-        for (int i = 0; i < transport.getContractedMechanics().size(); i++) {
-            System.out.println(transport.getContractedMechanics().get(i).getFullname());
+        for (Mechanic mechanic: transport.getContractedMechanics()) {
+            System.out.println(mechanic.getFullname());
         }
         System.out.println("---------------------------------------------------------");
 

@@ -1,14 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Driver<D extends Transport & Competing> {
     private final String fullName;
     private String driverLicense;
     private int experienceYears;
-
-
-
-
 
 
     public Driver(String fullName, String driverLicense, int experienceYears) throws NoDriverLicenseException {
