@@ -130,6 +130,8 @@ public class SkyproOOP4 {
         rosneft.provideSupportToVehicle(paganiZonda, 1090500);
         redBull.provideSupportToVehicle(paganiZonda, 1580000);
         paganiZonda.getContractedMechanics().add(jamesHammond);
+
+        paganiZonda.getContractedMechanics().add(jamesHammond);//!!!!!!!! duplication
         paganiZonda.getContractedMechanics().add(dougDeMuro);
         DetailedInfo.getDetailedInfo(paganiZonda);
 
